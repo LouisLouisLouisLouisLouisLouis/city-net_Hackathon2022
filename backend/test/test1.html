@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="test.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        body {
+            background-color: #1e1e1e;
+            align-content: center;
+        }
+
+        a {
+            color: #00a6ff;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        li {
+            padding: 0.25rem;
+        }
+
+        code {
+            background-color: #3c3c3c;
+            padding: .1rem;
+            padding-left: .25rem;
+            padding-right: .25rem;
+        }
+
+        .code {
+            background-color: #3c3c3c;
+            border-radius: 13px;
+            text-align: left;
+        }
+
+        .a {
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+
+        .d {
+            width: 40%;
+            font-family: "Roboto";
+            font-weight: 400;
+            color: #FFFFFF;
+            margin: 0 auto;
+
+            border: 1px solid #bbbbbb;
+            border-radius: 13px;
+            padding: 10px 25px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="a">
+    <div class="d">
+        <h1>Please</h1>
+        <p>
+            Please is a cross-language build system with an emphasis on high performance, extensibility and
+            reproducibility.
+
+
+            It supports a number of popular languages and can automate nearly any aspect of your
+            build process.
+        </p>
+        <p>
+            See <a href="http://please.build">http://please.build</a> for more information.
+        </p>
+        <p>
+            Currently Linux (tested on Ubuntu), macOS and FreeBSD are actively supported.
+        </p>
+        <p>
+            If you're a fan of Please, don't forget to add yourself to the <a
+                href="https://github.com/thought-machine/please/blob/master/ADOPTERS.md">adopters</a> file.
+        </p>
+        <h1>Getting Started</h1>
+        <p>The easiest way to install it on your own machine is to run:</p>
+        <div class="code">
+            <code>
+                curl -s https://get.please.build | bash
+            </code>
+        </div>
+        <p>Or, if you prefer, grab one of the tarballs off our <a
+                href="https://github.com/thought-machine/please/releases">releases page</a> and extract it yourself;
+            it typically
+            lives in ~/.please.</p>
+        <p>You can also install using Homebrew:</p>
+        <div>
+                <pre class="code">
+                    brew tap thought-machine/please
+                    brew install please
+                </pre>
+        </div>
+        <p>
+            Then you simply run <code>plz init</code> at the root of your project to set up a default config and
+            you're ready to
+            go. The best way to get to grips with Please is through the codelabs! There's also the getting started
+            guide that explains the core concepts.
+        </p>
+        <h1>How is it so fast?</h1>
+        <p>
+            Please has a robust and correct caching model that enables us to aggressively cache artifacts. Caching
+            is based on the hashes of inputs (both files, and environment variables) to each rule rather than last
+            modified timestamps. Builds are hermetic so don't have access to anything they haven't explicitly
+            defined as inputs. This means that if anything changes, we know exactly what might've been affected, so
+            the minimal set of targets get built and tested.
+        </p>
+        <p>
+            Because each task is hermetic, they can be run in parallel without any chance of interfering with
+            each-other. Combine these two concepts with shared remote caches, and it makes for a blazing fast build
+            system for any language or technology.
+        </p>
+        <p>
+            Please is also written in Go and every effort has been made to make it as fast as possible. There's no
+            startup time waiting to bring up VMs, interpreting code or communicating with remote JVM processes. The
+            code itself takes full advantage of Go's concurrency and asynchronicity. The end result is a snappy
+            command line tool that gets to work immediately and feels great to use.
+        </p>
+
+        <h1>Why Please, and not Maven, pip, or go build?</h1>
+        <p>A build system is more than just a mechanism for invoking the compiler. If you're working on just one
+            language, don't have any code generation, and don't need to publish any artifacts anywhere, you might
+            not need Please. Chances are this is not the case.</p>
+
+        <p>Building software often involves more than just compiling code. There's deployment config to template,
+            code to generate, and quite often, there's more than one language involved. Please provides a powerful,
+            comprehensive, and understandable framework that you can use to craft a truly holistic build process.
+        </p>
+
+        <p>Please does this through a consistent and seamless command line interface; there's no need to learn new
+            build systems and technologies for different languages. Build any target with plz build, test any target
+            with plz test, no matter what's going on under the hood.</p>
+
+        <p>The Docker & Kubernetes codelab covers building a Kubernetes based application with Please, including
+            reliably deploying code to a local cluster, and pushing it to a remote registry.</p>
+
+        <p>The genrule() codelab covers extending Please with custom build definitions to truly automate any part of
+            your deployment process.</p>
+
+        <h1>Documentation</h1>
+        <ul>
+            <li><a href="https://please.build/quickstart.html">Quickstart</a></li>
+            <li><a href="https://please.build/commands.html">Commands & command-line arguments</a></li>
+            <li><a href="https://please.build/lexicon.html">Built-in rules</a></li>
+            <li><a href="https://please.build/language.html">BUILD language reference</a></li>
+            <li><a href="https://please.build/build_rules.html">Custom build rules</a></li>
+            <li><a href="https://please.build/config.html">Config reference</a></li>
+            <li><a href="https://please.build/faq.html">FAQ</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+
+</html>
